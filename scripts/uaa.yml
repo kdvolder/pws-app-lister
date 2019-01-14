@@ -1,0 +1,16 @@
+scim:
+  users:
+  - kdvolder@test|test|scim.write,scim.read,openid,clients.admin
+oauth:
+  clients:
+    applister: 
+      secret: secret
+      authorized-grant-types: password,implicit,authorization_code,client_credentials,refresh_token
+      scope: cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme
+      authorities: uaa.resource
+      autoapprove:
+      - openid
+      redirect-uri: http://localhost:8888/**
+      signup_redirect_url: http://localhost:8888/
+      change_email_redirect_url: http://localhost:8888/
+      name: PWS App Lister
